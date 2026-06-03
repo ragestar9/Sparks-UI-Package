@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SparksOrigin UI Package v2.0 — Premium dark &amp; gold liquid glass animated component library">
+  <title>SparksOrigin UI — Liquid Glass Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+<link rel="stylesheet" href="theme-dark.css" id="theme-dark" disabled>
+<link rel="stylesheet" href="theme-light.css" id="theme-light" disabled>
+  <!-- Core & Animations -->
+  <link rel="stylesheet" href="css/core.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/layout.css">
+  
+  <!-- Components -->
+  <link rel="stylesheet" href="css/card.css">
+  <link rel="stylesheet" href="css/button.css">
+  <link rel="stylesheet" href="css/input.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/badge.css">
+  <link rel="stylesheet" href="css/toggle.css">
+  <link rel="stylesheet" href="css/avatar.css">
+  <link rel="stylesheet" href="css/divider.css">
+  <link rel="stylesheet" href="css/tooltip.css">
+  <link rel="stylesheet" href="css/loader.css">
+  <link rel="stylesheet" href="css/progress.css">
+  <link rel="stylesheet" href="css/alert.css">
+</head>
+<body>
+
+  <!-- ===== CUSTOM CURSOR & SPOTLIGHT ===== -->
+  <div class="sp-ambient-spotlight"></div>
+  <div class="sp-custom-cursor-dot" id="cursor-dot"></div>
+  <div class="sp-custom-cursor-ring" id="cursor-ring"></div>
+
+  <!-- ===== ANIMATED BACKGROUND ===== -->
+  <div class="bg-canvas">
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+    <div class="bg-orb bg-orb--4"></div>
+    <div class="bg-orb bg-orb--5"></div>
+  </div>
+  <div class="bg-grid"></div>
+
+  <!-- ===== LIVE FPS COUNTER ===== -->
+  <div class="sp-fps-widget" id="fps-widget">
+    <div class="sp-fps-label">FRAMES</div>
+    <div class="sp-fps-value" id="fps-value">60</div>
+  </div>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <div class="page-content">
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+      <div id="triangle">
+        <svg id="Layer_1" data-name="Layer 1" version="1.1" viewBox="0 0 2000 2000">
+          <polygon class="cls-1" points="928 781 1021 951 784.5 1371.97 1618 1371.97 1530.32 1544 509 1539 928 781"></polygon>
+          <polygon class="cls-3" points="1618 1371.97 784.5 1371.97 874.93 1211 1346 1211 923.1 456 1110.06 456 1618 1371.97"></polygon>
+          <g id="Layer_2" data-name="Layer 2">
+            <polygon class="cls-2" points="418 1372.74 509 1539 928 781 1162.32 1211 1346 1211 923.1 456 418 1372.74"></polygon>
+          </g>
+        </svg>
+      </div>
+      <div class="hero-badge">Liquid Glass Edition</div>
+      <p class="hero-subtitle">component library</p>
+      <h1 class="hero-title">SparksOrigin UI</h1>
+      <p class="hero-desc">A premium <strong>liquid glass</strong> animated component package with frosted surfaces, light refraction, and fluid animations. <strong>Hover, click, and interact</strong> to experience.</p>
+    </header>
+    <div class="theme-switcher-fixed" style="position:fixed; top:30px; right:40px; z-index:100;">
+      <button id="theme-toggle" class="sp-btn sp-btn--outline" style="padding:0; border-radius:50%; width:48px; height:48px; display:flex; align-items:center; justify-content:center; box-shadow:var(--sp-shadow-glass);">
+        <span class="sp-btn-border" style="border-radius: 50%;"></span>
+        <span class="sp-btn-text" id="theme-icon" style="margin:0; display:flex; letter-spacing:0;"></span>
+      </button>
+    </div>
+
+    <div class="showcase">
+
+      <!-- ===== SIDEBAR ===== -->
+      <nav class="sidebar">
+        <p class="sidebar-title">Components</p>
+        <a href="#cards" class="sidebar-link">Cards</a>
+        <a href="#buttons" class="sidebar-link">Buttons</a>
+        <a href="#inputs" class="sidebar-link">Inputs</a>
+        <a href="#navigation" class="sidebar-link">Navigation</a>
+        <a href="#badges" class="sidebar-link">Badges</a>
+        <a href="#toggles" class="sidebar-link">Toggles</a>
+        <a href="#avatars" class="sidebar-link">Avatars</a>
+        <a href="#dividers" class="sidebar-link">Dividers</a>
+        <a href="#tooltips" class="sidebar-link">Tooltips</a>
+        <a href="#loaders" class="sidebar-link">Loaders</a>
+        <a href="#progress" class="sidebar-link">Progress</a>
+        <a href="#alerts" class="sidebar-link">Alerts</a>
+      </nav>
+
+      <!-- ===== MAIN ===== -->
+      <main class="main">
+
+        <!-- ======== CARDS ======== -->
+        <section id="cards" class="section">
+          <div class="section-header">
+            <h2 class="section-title">Cards</h2>
+            <p class="section-desc">Frosted glass cards with border rotation, scale, caustic shimmer, and content reveal animations.</p>
+          </div>
+
+          <p class="component-label">Default</p>
+          <div class="component-row">
+            <div class="sp-card">
+              <div class="sp-card-border"></div>
+              <div class="sp-card-content">
+                <div class="sp-card-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <h3 class="sp-card-title">Spark</h3>
+                <p class="sp-card-subtitle">design system</p>
+              </div>
+              <span class="sp-card-footer">hover to reveal</span>
+            </div>
+
+            <div class="sp-card">
+              <div class="sp-card-border"></div>
+              <div class="sp-card-content">
+                <div class="sp-card-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18"/></svg>
+                </div>
+                <h3 class="sp-card-title">Layout</h3>
+                <p class="sp-card-subtitle">components</p>
+              </div>
+              <span class="sp-card-footer">interactive ui</span>
+            </div>
+          </div>
+
+          <p class="component-label">Feature Card</p>
+          <div class="component-row">
+            <div class="sp-card sp-card--feature">
+              <div class="sp-card-border"></div>
+              <div class="sp-card-content">
+                <div class="sp-card-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </div>
+                <h3 class="sp-card-title">Premium Feature</h3>
+                <p class="sp-card-subtitle">liquid glass animation</p>
+              </div>
+              <span class="sp-card-footer">sparksorigin ui</span>
+            </div>
+          </div>
+
+          <p class="component-label">Compact Cards</p>
+          <div class="component-row">
+            <div class="sp-card sp-card--compact">
+              <div class="sp-card-border"></div>
+              <div class="sp-card-content">
+                <h3 class="sp-card-title" style="font-size: 12px;">Glass</h3>
+              </div>
+              <span class="sp-card-footer">mini</span>
+            </div>
+            <div class="sp-card sp-card--compact">
+              <div class="sp-card-border"></div>
+              <div class="sp-card-content">
+                <h3 class="sp-card-title" style="font-size: 12px;">Frost</h3>
+              </div>
+              <span class="sp-card-footer">card</span>
+            </div>
+            <div class="sp-card sp-card--compact">
+              <div class="sp-card-border"></div>
+              <div class="sp-card-content">
+                <h3 class="sp-card-title" style="font-size: 12px;">Blur</h3>
+              </div>
+              <span class="sp-card-footer">unit</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======== BUTTONS ======== -->
+        <section id="buttons" class="section">
+          <div class="section-header">
+            <h2 class="section-title">Buttons</h2>
+            <p class="section-desc">Frosted glass buttons with border reveal, trail sweep, and letter-spacing transitions.</p>
+          </div>
+
+          <p class="component-label">Primary</p>
+          <div class="component-row">
+            <button class="sp-btn" id="btn-start">
+              <span class="sp-btn-border"></span>
+              <span class="sp-btn-trail"></span>
+              <span class="sp-btn-text">Get Started</span>
+            </button>
+            <button class="sp-btn" id="btn-explore">
+              <span class="sp-btn-border"></span>
+              <span class="sp-btn-trail"></span>
+              <span class="sp-btn-text">Explore</span>
+            </button>
+          </div>
+
+          <p class="component-label">Outline</p>
+          <div class="component-row">
+            <button class="sp-btn sp-btn--outline" id="btn-outline">
+              <span class="sp-btn-border"></span>
+              <span class="sp-btn-trail"></span>
+              <span class="sp-btn-text">Outline Style</span>
+            </button>
+            <button class="sp-btn sp-btn--outline" id="btn-secondary">
+              <span class="sp-btn-border"></span>
+              <span class="sp-btn-trail"></span>
+              <span class="sp-btn-text">Secondary</span>
+            </button>
+          </div>
+
+          <p class="component-label">Ghost</p>
+          <div class="component-row">
+            <button class="sp-btn sp-btn--ghost" id="btn-ghost1">
+              <span class="sp-btn-text">Ghost Link</span>
+            </button>
+            <button class="sp-btn sp-btn--ghost" id="btn-ghost2">
+              <span class="sp-btn-text">Learn More</span>
+            </button>
+          </div>
+
+          <p class="component-label">Danger</p>
+          <div class="component-row">
+            <button class="sp-btn sp-btn--danger" id="btn-danger">
+              <span class="sp-btn-border"></span>
+              <span class="sp-btn-trail"></span>
+              <span class="sp-btn-text">Delete</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ======== INPUTS ======== -->
+        <section id="inputs" class="section">
+          <div class="section-header">
+            <h2 class="section-title">Inputs</h2>
+            <p class="section-desc">Frosted glass inputs with floating labels, animated border reveal, and focus glow refraction.</p>
+          </div>
+
+          <div class="component-grid">
+            <div class="sp-input-wrap">
+              <input type="text" class="sp-input" id="input-name" placeholder=" " autocomplete="off">
+              <label class="sp-input-label" for="input-name">Full Name</label>
+              <span class="sp-input-line"></span>
+              <span class="sp-input-border"></span>
+            </div>
+
+            <div class="sp-input-wrap">
+              <input type="email" class="sp-input" id="input-email" placeholder=" " autocomplete="off">
+              <label class="sp-input-label" for="input-email">Email Address</label>
+              <span class="sp-input-line"></span>
+              <span class="sp-input-border"></span>
+            </div>
+
+            <div class="sp-input-wrap">
+              <input type="password" class="sp-input" id="input-pw" placeholder=" " autocomplete="off">
+              <label class="sp-input-label" for="input-pw">Password</label>
+              <span class="sp-input-line"></span>
+              <span class="sp-input-border"></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======== NAVIGATION ======== -->
+        <section id="navigation" class="section">
+          <div class="section-header">
+            <h2 class="section-title">Navigation</h2>
+            <p class="section-desc">Nav links with trail underline sweep, letter-spacing animation, and text glow.</p>
+          </div>
+
+          <div class="glass-stage component-row">
+            <a href="#" class="sp-nav-link" onclick="event.preventDefault()" id="nav-home">Home</a>
+            <a href="#" class="sp-nav-link sp-nav-link--active" onclick="event.preventDefault()" id="nav-comp">Components</a>
+            <a href="#" class="sp-nav-link" onclick="event.preventDefault()" id="nav-docs">Documentation</a>
+            <a href="#" class="sp-nav-link" onclick="event.preventDefault()" id="nav-examples">Examples</a>
+            <a href="#" class="sp-nav-link" onclick="event.preventDefault()" id="nav-github">GitHub</a>
+          </div>
+        </section>
+
+        <!-- ======== BADGES ======== -->
+        <section id="badges" class="section">
+          <div class="section-header">
+            <h2 class="section-title">Badges</h2>
+            <p class="section-desc">Frosted glass badges with scale, color fill, and border-radius morph animations.</p>
+          </div>
+
+          <p class="component-label">Default</p>
+          <div class="component-row">
+            <span class="sp-badge">Default</span>
+            <span class="sp-badge">Glass</span>
+            <span class="sp-badge">Premium</span>
+            <span class="sp-badge">v2.0</span>
+          </div>
+
+          <p class="component-label">Status Variants</p>
+          <div class="component-row">
+            <span class="sp-badge sp-badge--success">Active</span>
+            <span class="sp-badge sp-badge--danger">Error</span>
+            <span class="sp-badge sp-badge--success sp-badge--dot">Online</span>
+            <span class="sp-badge sp-badge--danger sp-badge--dot">Offline</span>
+          </div>
+        </section>
+
+        <!-- ======== TOGGLES ======== -->
+        <section id="toggles" class="section">
+          <div class="section-header">
+            <h2 class="section-title">Toggles</h2>
+            <p class="section-desc">Frosted glass toggle switches with trail sweep and spring-physics thumb animation. Click to toggle.</p>
+          </div>
+
+          <div class="component-row">
+            <div class="toggle-container">
+              <input type="checkbox" class="toggle-input">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292 142" class="toggle">
+                <path d="M71 142C31.7878 142 0 110.212 0 71C0 31.7878 31.7878 0 71 0C110.212 0 119 30 146 30C173 30 182 0 221 0C260 0 292 31.7878 292 71C292 110.212 260.212 142 221 142C181.788 142 173 112 146 112C119 112 110.212 142 71 142Z" class="toggle-background"></path>
+                <rect rx="6" height="64" width="12" y="39" x="64" class="toggle-icon on"></rect>
+                <path d="M221 91C232.046 91 241 82.0457 241 71C241 59.9543 232.046 51 221 51C209.954 51 201 59.9543 201 71C201 82.0457 209.954 91 221 91ZM221 103C238.673 103 253 88.6731 253 71C253 53.3269 238.673 39 221 39C203.327 39 189 53.3269 189 71C189 88.6731 203.327 103 221 103Z" fill-rule="evenodd" class="toggle-icon off"></path>
+                <g filter="url('#goo')">
+                  <rect fill="#fff" rx="29" height="58" width="116" y="42" x="13" class="toggle-circle-center"></rect>
+                  <rect fill="#fff" rx="58" height="114" width="114" y="14" x="14" class="toggle-circle left"></rect>
+                  <rect fill="#fff" rx="58" height="114" width="114" y="14" x="164" class="toggle-circle right"></rect>
+                </g>
+                <filter id="goo">
+                  <feGaussianBlur stdDeviation="10" result="blur" in="SourceGraphic"></feGaussianBlur>
+                  <feColorMatrix result="goo" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" mode="matrix" in="blur"></feColorMatrix>
+                </filter>
+              </svg>
+            </div>
+            <div class="toggle-container">
+              <input type="checkbox" class="toggle-input" checked>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292 142" class="toggle">
+                <path d="M71 142C31.7878 142 0 110.212 0 71C0 31.7878 31.7878 0 71 0C110.212 0 119 30 146 30C173 30 182 0 221 0C260 0 292 31.7878 292 71C292 110.212 260.212 142 221 142C181.788 142 173 112 146 112C119 112 110.212 142 71 142Z" class="toggle-background"></path>
+                <rect rx="6" height="64" width="12" y="39" x="64" class="toggle-icon on"></rect>
+                <path d="M221 91C232.046 91 241 82.0457 241 71C241 59.9543 232.046 51 221 51C209.954 51 201 59.9543 201 71C201 82.0457 209.954 91 221 91ZM221 103C238.673 103 253 88.6731 253 71C253 53.3269 238.673 39 221 39C203.327 39 189 53.3269 189 71C189 88.6731 203.327 103 221 103Z" fill-rule="evenodd" class="toggle-icon off"></path>
+                <g filter="url('#goo-2')">
+                  <rect fill="#fff" rx="29" height="58" width="116" y="42" x="13" class="toggle-circle-center"></rect>
+                  <rect fill="#fff" rx="58" height="114" width="114" y="14" x="14" class="toggle-circle left"></rect>
+                  <rect fill="#fff" rx="58" height="114" width="114" y="14" x="164" class="toggle-circle right"></rect>
+                </g>
+                <filter id="goo-2">
+                  <feGaussianBlur stdDeviation="10" result="blur" in="SourceGraphic"></feGaussianBlur>
+                  <feColorMatrix result="goo-2" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" mode="matrix" in="blur"></feColorMatrix>
+                </filter>
+              </svg>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======== AVATARS ======== -->
+        <section id="avatars" class="section">
+          <div class="section-header">
+            <h2 class="section-title">Avatars</h2>
+            <p class="section-desc">Circular avatars with gold ring reveal, glow effect, and status indicator pulse.</p>
+          </div>
+
+          <div class="component-row">
+            <div class="sp-avatar sp-avatar--sm" id="avatar-sm">
+              <div class="sp-avatar-ring"></div>
+              <div class="sp-avatar-img" style="background: linear-gradient(135deg, #bd9f67, #243137);">
+                <span style="font-size:12px;">S</span>
+              </div>
+            </div>
+
+            <div class="sp-avatar" id="avatar-md">
+              <div class="sp-avatar-ring"></div>
+              <div class="sp-avatar-img" style="background: linear-gradient(135deg, #bd9f67, #243137);">
+                <span style="font-size:16px;">SP</span>
+              </div>
+              <div class="sp-avatar-status"></div>
+            </div>
+
+            <div class="sp-avatar sp-avatar--lg" id="avatar-lg">
+              <div class="sp-avatar-ring"></div>
+              <div class="sp-avatar-img" style="background: linear-gradient(135deg, #bd9f67, #2d3d45);">
+                <span style="font-size:22px;">UI</span>
+              </div>
+              <div class="sp-avatar-status"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======== DIVIDERS ======== -->
+        <section id="dividers" class="section">
+          <div class="section-header">
+            <h2 class="section-title">Dividers</h2>
+            <p class="section-desc">Animated gold dividers with continuous trail gradient sweep.</p>
+          </div>
+
+          <div style="padding: 24px 0;">
+            <p class="component-label">Simple</p>
+            <div class="sp-divider"></div>
+          </div>
+
+          <div style="padding: 24px 0;">
+            <p class="component-label">With Text</p>
+            <div class="sp-divider sp-divider--text" data-text="or continue with">or continue with</div>
+          </div>
+        </section>
+
+        <!-- ======== TOOLTIPS ======== -->
+        <section id="tooltips" class="section">
+          <div class="section-header">
+            <h2 class="section-title">Tooltips</h2>
+            <p class="section-desc">Frosted glass tooltips with spring-scale entry animation.</p>
+          </div>
+
+          <div class="component-row" style="gap: 48px; padding: 60px 0 40px;">
+            <span class="sp-has-tooltip" id="tooltip-1">
+              <span class="sp-badge">Hover Me</span>
+              <span class="sp-tooltip">Frosted glass tooltip with blur refraction</span>
+            </span>
+
+            <span class="sp-has-tooltip" id="tooltip-2">
+              <span class="sp-badge">Info</span>
+              <span class="sp-tooltip">Premium liquid glass component</span>
+            </span>
+          </div>
+        </section>
+
+        <!-- ======== LOADERS ======== -->
+        <section id="loaders" class="section">
+          <div class="section-header">
+            <h2 class="section-title">Loaders</h2>
+            <p class="section-desc">Gold spinning rings with gradient glow trail and pulse variants.</p>
+          </div>
+
+          <div class="component-row" style="gap: 48px;">
+            <div style="text-align:center;">
+              <div class="sp-loader sp-loader--sm"></div>
+              <p class="component-label" style="margin-top:12px; margin-bottom:0;">Small</p>
+            </div>
+            <div style="text-align:center;">
+              <div class="sp-loader"></div>
+              <p class="component-label" style="margin-top:12px; margin-bottom:0;">Default</p>
+            </div>
+            <div style="text-align:center;">
+              <div class="sp-loader sp-loader--lg"></div>
+              <p class="component-label" style="margin-top:12px; margin-bottom:0;">Large</p>
+            </div>
+            <div style="text-align:center;">
+              <div class="sp-loader sp-loader--pulse"></div>
+              <p class="component-label" style="margin-top:12px; margin-bottom:0;">Pulse</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======== PROGRESS ======== -->
+        <section id="progress" class="section">
+          <div class="section-header">
+            <h2 class="section-title">Progress Bars</h2>
+            <p class="section-desc">Frosted glass tracks with gradient fill, shimmer glow, and leading edge light.</p>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:24px; max-width:500px;">
+            <div>
+              <p class="component-label">25%</p>
+              <div class="sp-progress">
+                <div class="sp-progress-fill" style="width: 25%;"></div>
+              </div>
+            </div>
+            <div>
+              <p class="component-label">60%</p>
+              <div class="sp-progress">
+                <div class="sp-progress-fill" style="width: 60%;"></div>
+              </div>
+            </div>
+            <div>
+              <p class="component-label">90%</p>
+              <div class="sp-progress">
+                <div class="sp-progress-fill" style="width: 90%;"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ======== ALERTS ======== -->
+        <section id="alerts" class="section">
+          <div class="section-header">
+            <h2 class="section-title">Alerts</h2>
+            <p class="section-desc">Frosted glass notifications with slide-in animation, border reveal, and status glow.</p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 16px; max-width: 500px;">
+            <div class="sp-alert" id="alert-default">
+              <div class="sp-alert-border"></div>
+              <div class="sp-alert-content">
+                <strong class="sp-alert-title">Default Alert</strong>
+                <p class="sp-alert-text">Frosted glass notification with gold accent.</p>
+              </div>
+              <button class="sp-alert-close" onclick="this.parentElement.style.display='none'">&times;</button>
+            </div>
+
+            <div class="sp-alert sp-alert--success" id="alert-success">
+              <div class="sp-alert-border"></div>
+              <div class="sp-alert-content">
+                <strong class="sp-alert-title">Success</strong>
+                <p class="sp-alert-text">Operation completed successfully.</p>
+              </div>
+              <button class="sp-alert-close" onclick="this.parentElement.style.display='none'">&times;</button>
+            </div>
+
+            <div class="sp-alert sp-alert--danger" id="alert-danger">
+              <div class="sp-alert-border"></div>
+              <div class="sp-alert-content">
+                <strong class="sp-alert-title">Error</strong>
+                <p class="sp-alert-text">Something went wrong. Please try again.</p>
+              </div>
+              <button class="sp-alert-close" onclick="this.parentElement.style.display='none'">&times;</button>
+            </div>
+
+            <div class="sp-alert sp-alert--info" id="alert-info">
+              <div class="sp-alert-border"></div>
+              <div class="sp-alert-content">
+                <strong class="sp-alert-title">Info</strong>
+                <p class="sp-alert-text">Here's some helpful information for you.</p>
+              </div>
+              <button class="sp-alert-close" onclick="this.parentElement.style.display='none'">&times;</button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer style="text-align:center; padding: 50px 40px; border-top: 1px solid rgba(189,159,103,0.08);">
+      <p style="font-size: 11px; text-transform: uppercase; letter-spacing: 4px; color: #5a6a73;">SparksOrigin UI Package &bull; v2.0 &bull; Liquid Glass Edition</p>
+    </footer>
+
+  </div><!-- /page-content -->
+
+<script>
+      // Initialize theme based on system preference or default to dark
+      const darkLink = document.getElementById('theme-dark');
+      const lightLink = document.getElementById('theme-light');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const moonSVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+      const sunSVG = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+      const themeIcon = document.getElementById('theme-icon');
+
+      function setTheme(isDark) {
+        if (isDark) {
+          darkLink.disabled = false;
+          lightLink.disabled = true;
+          if(themeIcon) themeIcon.innerHTML = sunSVG;
+        } else {
+          darkLink.disabled = true;
+          lightLink.disabled = false;
+          if(themeIcon) themeIcon.innerHTML = moonSVG;
+        }
+        localStorage.setItem('sp-theme', isDark ? 'dark' : 'light');
+      }
+      // Load saved preference
+      const saved = localStorage.getItem('sp-theme');
+      if (saved) {
+        setTheme(saved === 'dark');
+      } else {
+        setTheme(prefersDark);
+      }
+      // Toggle button handler
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        const isDark = darkLink.disabled;
+        setTheme(isDark);
+      });
+      // Custom Cursor Logic
+      const cursorDot = document.getElementById('cursor-dot');
+      const cursorRing = document.getElementById('cursor-ring');
+      let mouseX = 0, mouseY = 0;
+      let ringX = 0, ringY = 0;
+      let isHovering = false;
+
+      // Ambient Spotlight Tracking
+      const spotlight = document.querySelector('.sp-ambient-spotlight');
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      // Smooth follow for the ring using requestAnimationFrame
+      function animateCursor() {
+        // Sync dot and spotlight directly to mouse coordinates
+        cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        spotlight.style.setProperty('--mouse-x', `${mouseX}px`);
+        spotlight.style.setProperty('--mouse-y', `${mouseY}px`);
+
+        // Spring physics for the ring
+        ringX += (mouseX - ringX) * 0.15; // spring factor
+        ringY += (mouseY - ringY) * 0.15;
+        
+        cursorRing.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+        
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+
+      // Add hover effect for interactive elements
+      const interactiveElements = document.querySelectorAll('a, button, .sp-card, .sp-toggle, .sp-avatar, input');
+      interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('sp-cursor-hover'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('sp-cursor-hover'));
+      });
+
+      // ===== INTERSECTION OBSERVER (Scroll Animations) =====
+      // Automatically add reveal class to all sections and rows
+      const revealElements = document.querySelectorAll('.section, .hero, .sidebar');
+      revealElements.forEach(el => el.classList.add('sp-reveal'));
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('sp-active');
+            // observer.unobserve(entry.target); // Un-comment if you only want it to reveal once
+          } else {
+            // Remove this else block if you don't want elements to re-animate on scroll up
+            entry.target.classList.remove('sp-active');
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      // ===== FPS COUNTER =====
+      const fpsValue = document.getElementById('fps-value');
+      let frameCount = 0;
+      let lastTime = performance.now();
+      
+      function measureFPS() {
+        const now = performance.now();
+        frameCount++;
+        if (now - lastTime >= 1000) {
+          fpsValue.textContent = frameCount;
+          
+          // Color code based on performance
+          if(frameCount >= 55) fpsValue.style.color = 'var(--sp-accent-light)';
+          else if(frameCount >= 30) fpsValue.style.color = 'var(--sp-accent)';
+          else fpsValue.style.color = '#ff4d4d'; // drops below 30
+
+          frameCount = 0;
+          lastTime = now;
+        }
+        requestAnimationFrame(measureFPS);
+      }
+      measureFPS();
+
+    </script>
+</body>
+</html>

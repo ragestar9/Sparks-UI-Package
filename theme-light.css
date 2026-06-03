@@ -1,0 +1,82 @@
+/*
+ * SparksOrigin UI — Light Theme
+ * Liquid Glass on luminous surfaces
+ */
+:root {
+  /* Surface */
+  --sp-bg-deep: #e8e4db;
+  --sp-bg-page: #f5f2eb;
+  --sp-bg-card: #ffffff;
+  --sp-bg-elevated: #faf8f5;
+
+  /* Liquid Glass */
+  --sp-glass: rgba(255, 255, 255, 0.65);
+  --sp-glass-strong: rgba(255, 255, 255, 0.85);
+  --sp-glass-border: rgba(163, 122, 63, 0.2);
+  --sp-glass-highlight: rgba(255, 255, 255, 0.8);
+  --sp-glass-shine: rgba(255, 255, 255, 0.95);
+  --sp-glass-shadow-color: rgba(163, 122, 63, 0.1);
+  --sp-glass-blur: 24px;
+  --sp-glass-saturate: 140%;
+
+  /* Accent - Warm, elegant gold */
+  --sp-accent: #a37a3f;
+  --sp-accent-light: #bd9354;
+  --sp-accent-dark: #8a632b;
+  --sp-accent-glow: rgba(163, 122, 63, 0.2);
+  --sp-accent-glass: rgba(163, 122, 63, 0.1);
+  --sp-accent-text: #8a632b;
+  --sp-accent-on-fill: #ffffff;
+
+  /* Text - Warm dark slate */
+  --sp-text: #332d26;
+  --sp-text-muted: #73685c;
+  --sp-text-faint: #998e82;
+
+  /* Status */
+  --sp-danger: #cc4747;
+  --sp-danger-glow: rgba(204, 71, 71, 0.2);
+  --sp-danger-glass: rgba(204, 71, 71, 0.1);
+  --sp-success: #35a060;
+  --sp-success-glow: rgba(53, 160, 96, 0.2);
+  --sp-success-glass: rgba(53, 160, 96, 0.1);
+  --sp-info: #358da0;
+  --sp-info-glow: rgba(53, 141, 160, 0.2);
+  --sp-info-glass: rgba(53, 141, 160, 0.1);
+
+  /* Depth Shadows - Elegant layered shadows */
+  --sp-shadow-glass:
+    0 6px 24px rgba(163, 122, 63, 0.08),
+    0 2px 6px rgba(51, 45, 38, 0.04),
+    inset 0 1px 0 var(--sp-glass-shine),
+    inset 0 -1px 0 rgba(51, 45, 38, 0.02);
+  --sp-shadow-glass-hover:
+    0 12px 36px rgba(163, 122, 63, 0.12),
+    0 4px 12px rgba(51, 45, 38, 0.06),
+    inset 0 1px 0 var(--sp-glass-shine);
+  --sp-shadow-glow:
+    0 0 24px var(--sp-accent-glow),
+    0 8px 32px rgba(163, 122, 63, 0.1),
+    inset 0 1px 0 var(--sp-glass-shine);
+  --sp-shadow-sm:
+    0 2px 6px rgba(51, 45, 38, 0.06),
+    inset 0 1px 0 var(--sp-glass-shine);
+  --sp-shadow-inset:
+    inset 0 2px 6px rgba(51, 45, 38, 0.06),
+    0 1px 0 var(--sp-glass-shine);
+
+  /* Ripple */
+  --sp-ripple: rgba(163, 122, 63, 0.2);
+
+  /* Scrollbar */
+  --sp-scrollbar-track: rgba(51, 45, 38, 0.03);
+  --sp-scrollbar-thumb: rgba(163, 122, 63, 0.2);
+
+  /* Orb Colors (background) - Warm pastels */
+  --sp-orb-1: rgba(163, 122, 63, 0.15);
+  --sp-orb-2: rgba(53, 160, 96, 0.08);
+  --sp-orb-3: rgba(53, 141, 160, 0.08);
+  --sp-orb-4: rgba(163, 122, 63, 0.1);
+  --sp-orb-5: rgba(204, 71, 71, 0.06);
+  --sp-grid-color: rgba(163, 122, 63, 0.05);
+}

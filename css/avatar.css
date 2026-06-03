@@ -1,0 +1,61 @@
+/* ============================================
+   COMPONENT: Avatar (.sp-avatar)
+   ============================================ */
+.sp-avatar {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transform: translate3d(0,0,0);
+  will-change: transform;
+  transition: transform var(--sp-speed) var(--sp-ease-spring);
+}
+.sp-avatar--sm { width: 32px; height: 32px; }
+.sp-avatar--lg { width: 64px; height: 64px; }
+
+.sp-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sp-text);
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--sp-shadow-sm);
+}
+
+.sp-avatar-ring {
+  position: absolute;
+  inset: -5px;
+  border: 2px solid var(--sp-accent);
+  border-radius: 50%;
+  opacity: 0;
+  transform: rotate(10deg) scale(0.92);
+  pointer-events: none;
+  will-change: opacity, transform;
+  transition:
+    opacity var(--sp-speed) var(--sp-ease),
+    transform var(--sp-speed) var(--sp-ease-spring),
+    box-shadow var(--sp-speed) var(--sp-ease);
+}
+
+.sp-avatar-status {
+  position: absolute;
+  bottom: 1px; right: 1px;
+  width: 10px; height: 10px;
+  background: var(--sp-success);
+  border: 2px solid var(--sp-bg-card);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 8px var(--sp-success-glow);
+  animation: sp-dot-pulse 2.5s var(--sp-ease) infinite;
+}
+.sp-avatar--sm .sp-avatar-status { width: 8px; height: 8px; }
+.sp-avatar--lg .sp-avatar-status { width: 14px; height: 14px; bottom: 2px; right: 2px; }
+
+.sp-avatar:hover { transform: scale(1.12) translate3d(0,0,0); }
+.sp-avatar:hover .sp-avatar-ring { opacity: 1; transform: rotate(0deg) scale(1); box-shadow: 0 0 20px var(--sp-accent-glow); }

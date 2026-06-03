@@ -1,0 +1,157 @@
+/* ============================================
+   COMPONENT: Button (.sp-btn)
+   ============================================ */
+.sp-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 36px;
+  background: var(--sp-glass);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid var(--sp-glass-border);
+  border-radius: 10px;
+  box-shadow: var(--sp-shadow-glass);
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+  will-change: transform, box-shadow;
+  transition:
+    transform var(--sp-speed) var(--sp-ease),
+    box-shadow var(--sp-speed) var(--sp-ease),
+    background var(--sp-speed) var(--sp-ease),
+    border-color var(--sp-speed) var(--sp-ease);
+}
+
+.sp-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--sp-glass-highlight) 0%, transparent 50%);
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.sp-btn-text {
+  position: relative;
+  z-index: 2;
+  color: var(--sp-accent-text);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition:
+    letter-spacing var(--sp-speed) var(--sp-ease),
+    color var(--sp-speed) var(--sp-ease),
+    transform var(--sp-speed) var(--sp-ease);
+}
+
+.sp-btn-border {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--sp-accent);
+  opacity: 0;
+  transform: rotate(5deg);
+  pointer-events: none;
+  z-index: 1;
+  will-change: inset, opacity, transform;
+  transition:
+    inset var(--sp-speed) var(--sp-ease),
+    opacity var(--sp-speed) var(--sp-ease),
+    transform var(--sp-speed) var(--sp-ease);
+}
+
+.sp-btn-trail {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hover */
+.sp-btn:hover {
+  transform: scale(1.05) translateY(-2px) translate3d(0,0,0);
+  box-shadow: var(--sp-shadow-glow);
+}
+.sp-btn:hover .sp-btn-text { letter-spacing: 4px; }
+.sp-btn:hover .sp-btn-border { inset: 3px; opacity: 1; transform: rotate(0deg); }
+.sp-btn:hover .sp-btn-trail { animation: sp-trail var(--sp-speed-slow) var(--sp-ease); }
+
+/* Active */
+.sp-btn:active {
+  transform: scale(0.97) translate3d(0,0,0);
+  box-shadow: var(--sp-shadow-sm);
+  transition-duration: 0.1s;
+}
+
+/* Focus visible */
+.sp-btn:focus-visible {
+  outline: 2px solid var(--sp-accent);
+  outline-offset: 3px;
+}
+
+/* Glow pulse on hover */
+.sp-btn:hover::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  animation: sp-glow-pulse 2s var(--sp-ease) infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* --- Outline --- */
+.sp-btn--outline {
+  background: transparent;
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  border: 1px solid rgba(189,159,103,0.4);
+}
+.sp-btn--outline:hover {
+  background: var(--sp-accent);
+  border-color: var(--sp-accent);
+}
+.sp-btn--outline:hover .sp-btn-text { color: var(--sp-accent-on-fill); }
+.sp-btn--outline:hover .sp-btn-border { border-color: var(--sp-accent-light); }
+
+/* --- Ghost --- */
+.sp-btn--ghost {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  padding: 10px 16px;
+}
+.sp-btn--ghost::before { display: none; }
+.sp-btn--ghost::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--sp-accent);
+  transform: translateX(-50%);
+  transition: width var(--sp-speed) var(--sp-ease);
+  animation: none !important;
+}
+.sp-btn--ghost:hover { box-shadow: none; transform: scale(1.02) translate3d(0,0,0); }
+.sp-btn--ghost:hover::after { width: 80%; }
+
+/* --- Danger --- */
+.sp-btn--danger .sp-btn-text { color: var(--sp-danger); }
+.sp-btn--danger .sp-btn-border { border-color: var(--sp-danger); }
+.sp-btn--danger:hover { box-shadow: 0 0 30px var(--sp-danger-glow), var(--sp-shadow-glass); }
+.sp-btn--danger:hover .sp-btn-trail { animation: none; background: linear-gradient(90deg, transparent 70%, var(--sp-danger) 100%); opacity: 1; }
+.sp-btn--danger:hover::after { animation: none; }

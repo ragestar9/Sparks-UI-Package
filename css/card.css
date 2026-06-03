@@ -1,0 +1,151 @@
+/* ============================================
+   COMPONENT: Card (.sp-card)
+   ============================================ */
+.sp-card {
+  width: 300px;
+  height: 200px;
+  background: var(--sp-glass);
+  backdrop-filter: blur(var(--sp-glass-blur)) saturate(var(--sp-glass-saturate));
+  -webkit-backdrop-filter: blur(var(--sp-glass-blur)) saturate(var(--sp-glass-saturate));
+  border: 1px solid var(--sp-glass-border);
+  box-shadow: var(--sp-shadow-glass);
+  position: relative;
+  display: grid;
+  place-content: center;
+  border-radius: var(--sp-radius);
+  overflow: hidden;
+  cursor: pointer;
+  perspective: 800px;
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+  will-change: transform, border-radius, box-shadow;
+  transition:
+    transform var(--sp-speed) var(--sp-ease),
+    border-radius var(--sp-speed) var(--sp-ease),
+    box-shadow var(--sp-speed) var(--sp-ease);
+}
+
+/* Inner refraction highlight */
+.sp-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--sp-glass-highlight) 0%, transparent 40%, transparent 85%, rgba(0,0,0,0.03) 100%);
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+  transition: opacity var(--sp-speed) var(--sp-ease);
+}
+
+/* Caustic shimmer overlay */
+.sp-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 20%, var(--sp-glass-highlight) 40%, rgba(255,255,255,0.08) 50%, var(--sp-glass-highlight) 60%, transparent 80%);
+  background-size: 250% 100%;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--sp-speed) var(--sp-ease);
+}
+
+.sp-card:hover::after {
+  opacity: 1;
+  animation: sp-glass-shimmer 1.5s var(--sp-ease-glass) 1;
+}
+
+.sp-card--feature { width: 380px; height: 260px; }
+.sp-card--compact { width: 160px; height: 120px; }
+
+.sp-card-border {
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--sp-accent);
+  opacity: 0;
+  transform: rotate(10deg);
+  pointer-events: none;
+  z-index: 3;
+  will-change: inset, opacity, transform;
+  transition:
+    inset var(--sp-speed) var(--sp-ease),
+    opacity var(--sp-speed) var(--sp-ease),
+    transform var(--sp-speed) var(--sp-ease);
+}
+
+.sp-card-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: transform var(--sp-speed) var(--sp-ease);
+}
+
+.sp-card-icon {
+  color: var(--sp-accent);
+  margin-bottom: 12px;
+  will-change: transform;
+  filter: drop-shadow(0 0 8px var(--sp-accent-glow));
+  transition: transform var(--sp-speed) var(--sp-ease-spring);
+}
+
+.sp-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--sp-text);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: letter-spacing var(--sp-speed) var(--sp-ease);
+}
+
+.sp-card-subtitle {
+  font-size: 10px;
+  color: var(--sp-accent-text);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 4px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity var(--sp-speed) var(--sp-ease) 0.15s,
+    transform var(--sp-speed) var(--sp-ease) 0.15s,
+    letter-spacing var(--sp-speed) var(--sp-ease) 0.15s;
+}
+
+.sp-card-footer {
+  position: absolute;
+  left: 50%;
+  bottom: 13px;
+  transform: translateX(-50%);
+  font-size: 6px;
+  text-transform: uppercase;
+  padding: 0 5px 0 8px;
+  color: var(--sp-accent-text);
+  opacity: 0;
+  letter-spacing: 7px;
+  white-space: nowrap;
+  z-index: 1;
+  transition:
+    letter-spacing var(--sp-speed) var(--sp-ease),
+    opacity var(--sp-speed) var(--sp-ease);
+}
+
+/* Card hover */
+.sp-card:hover {
+  border-radius: 0;
+  transform: scale(1.08) translate3d(0,0,0);
+  box-shadow: var(--sp-shadow-glow);
+}
+.sp-card:hover .sp-card-border { inset: 15px; opacity: 1; transform: rotate(0deg); }
+.sp-card:hover .sp-card-icon { transform: scale(1.2) translateY(-2px); }
+.sp-card:hover .sp-card-title { letter-spacing: 4px; }
+.sp-card:hover .sp-card-subtitle { opacity: 1; transform: translateY(0); letter-spacing: 5px; }
+.sp-card:hover .sp-card-footer { letter-spacing: 3px; opacity: 1; }
+.sp-card:hover .sp-card-content { transform: translateY(-3px); }
+.sp-card--compact:hover .sp-card-border { inset: 8px; }
+
+/* Active press feedback */
+.sp-card:active {
+  transform: scale(1.03) translate3d(0,0,0);
+  transition-duration: 0.1s;
+}

@@ -1,0 +1,89 @@
+/* ============================================
+   COMPONENT: Toggle (.sp-toggle)
+   ============================================ */
+.toggle-container {
+  --active-color: var(--sp-accent);
+  --inactive-color: rgba(180, 190, 200, 0.4); /* fallback if glass is too transparent */
+  position: relative;
+  aspect-ratio: 292 / 142;
+  height: 2em;
+  filter: drop-shadow(0 4px 12px var(--sp-glass-shadow-color));
+}
+
+.toggle-input {
+  appearance: none;
+  margin: 0;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.toggle {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.toggle-background {
+  fill: var(--inactive-color);
+  transition: fill .4s;
+}
+
+.toggle-input:checked + .toggle .toggle-background {
+  fill: var(--active-color);
+}
+
+.toggle-circle-center {
+  transform-origin: center;
+  transition: transform .6s;
+}
+
+.toggle-input:checked + .toggle .toggle-circle-center {
+  transform: translateX(150px);
+}
+
+.toggle-circle {
+  transform-origin: center;
+  transition: transform .45s;
+  backface-visibility: hidden;
+}
+
+.toggle-circle.left {
+  transform: scale(1);
+}
+
+.toggle-input:checked + .toggle .toggle-circle.left {
+  transform: scale(0);
+}
+
+.toggle-circle.right {
+  transform: scale(0);
+}
+
+.toggle-input:checked + .toggle .toggle-circle.right {
+  transform: scale(1);
+}
+
+.toggle-icon {
+  transition: fill .4s;
+}
+
+.toggle-icon.on {
+  fill: var(--inactive-color);
+}
+
+.toggle-input:checked + .toggle .toggle-icon.on {
+  fill: #fff;
+}
+
+.toggle-icon.off {
+  fill: #eaeaec;
+}
+
+.toggle-input:checked + .toggle .toggle-icon.off {
+  fill: var(--active-color);
+}
