@@ -1,0 +1,38 @@
+/* ============================================
+   COMPONENT: Nav Link (.sp-nav-link)
+   ============================================ */
+.sp-nav-link {
+  position: relative;
+  color: var(--sp-accent-text);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 8px 4px;
+  cursor: pointer;
+  transition:
+    letter-spacing var(--sp-speed) var(--sp-ease),
+    color var(--sp-speed) var(--sp-ease),
+    text-shadow var(--sp-speed) var(--sp-ease);
+}
+
+.sp-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--sp-accent);
+  transform: translateX(-50%);
+  border-radius: 1px;
+  will-change: width;
+  transition: width var(--sp-speed) var(--sp-ease-spring), box-shadow var(--sp-speed) var(--sp-ease);
+}
+
+.sp-nav-link:hover { letter-spacing: 4px; color: var(--sp-accent-light); text-shadow: 0 0 20px var(--sp-accent-glow); }
+.sp-nav-link:hover::after { width: 100%; box-shadow: 0 0 10px var(--sp-accent-glow); }
+
+.sp-nav-link--active { color: var(--sp-accent-light); }
+.sp-nav-link--active::after { width: 100%; background: var(--sp-accent-light); box-shadow: 0 0 10px var(--sp-accent-glow); }
