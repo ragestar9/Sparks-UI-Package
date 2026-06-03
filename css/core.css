@@ -77,6 +77,14 @@ body.sp-cursor-hover .sp-custom-cursor-ring {
   border-color: var(--sp-text);
 }
 
+/* Hide custom cursor on mobile / touch devices */
+@media (pointer: coarse) {
+  .sp-custom-cursor-dot,
+  .sp-custom-cursor-ring {
+    display: none !important;
+  }
+}
+
 
 /* ============================================
    UTILITY: Ripple Effect
