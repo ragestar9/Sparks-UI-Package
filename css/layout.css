@@ -346,3 +346,63 @@
       text-align: right;
       transition: color 0.3s;
     }
+
+    /* ============================================
+       MOBILE RESPONSIVENESS
+       ============================================ */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 20px 40px;
+      }
+      
+      .hero-title {
+        font-size: 36px;
+      }
+      
+      .showcase {
+        flex-direction: column;
+        padding: 0 20px 60px;
+        gap: 30px;
+      }
+      
+      .sidebar {
+        position: relative;
+        top: 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 16px;
+      }
+      
+      .sidebar-title {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      
+      .sidebar-link {
+        flex: 1 1 auto;
+        text-align: center;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        border-radius: 6px 6px 0 0;
+        padding: 8px;
+      }
+      
+      .sidebar-link:hover {
+        border-left-color: transparent;
+        border-bottom-color: var(--sp-accent);
+        padding-left: 8px;
+      }
+      
+      .component-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sp-fps-widget {
+        bottom: 20px;
+        left: 20px;
+        transform: scale(0.8);
+        transform-origin: bottom left;
+      }
+    }
